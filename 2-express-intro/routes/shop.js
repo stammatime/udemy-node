@@ -13,7 +13,6 @@ router.get('/', (req, res, next) => {
     // this ensures that paths will work on different OSs, since windows uses \s and linux uses /s, etc
     // manually putting in absolute path does not work
     res.sendFile(path.join(rootDir, 'views','shop.html'));
-    res.send('<h1>Hello from express</h1>');
 });
 
 module.exports = router;
