@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -11,6 +12,8 @@ const notFoundRoutes = require('./routes/404');
 // parses bodys sent thru form, not other methods
 // we would use other parsers in that instance
 app.use(bodyParser.urlencoded({ extended: false }));  
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
